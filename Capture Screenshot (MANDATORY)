@@ -1,0 +1,26 @@
+Take a screenshot showing:
+
+Terminal output with policy violation
+
+Or KubeArmor logs clearly indicating a block
+kubearmor-policy-violation.png
+Commit to Your Forked Repository
+git add kubearmor-wisecow-zero-trust.yaml kubearmor-policy-violation.png
+git commit -m "Added zero-trust KubeArmor policy for Wisecow"
+git push origin main
+What Evaluators Look For (Extra Points)
+
+✔ Zero-trust mindset
+✔ Correct KubeArmor syntax
+✔ Policy applied successfully
+✔ Clear violation screenshot
+✔ Clean commit history
+Want Bonus Points?
+
+You can also add:
+
+Audit mode before Block
+
+Ingress-only network rules
+
+Separate policies for process/file/network
