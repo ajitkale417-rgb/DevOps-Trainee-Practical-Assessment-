@@ -1,0 +1,2 @@
+kubectl apply -f kubearmor-wisecow-zero-trust.yaml
+kubectl get kubearmorpolicies
