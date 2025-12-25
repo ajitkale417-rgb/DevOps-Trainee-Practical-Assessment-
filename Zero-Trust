@@ -1,0 +1,17 @@
+What “Zero-Trust” Means Here
+
+A zero-trust KubeArmor policy means:
+
+Deny everything by default
+
+Explicitly allow only what the application needs
+
+Log violations when anything else is attempted
+
+For Wisecow (a simple web app), we typically:
+
+Allow read access to required system files
+
+Allow network access on port 80/443
+
+Block shell execution, package managers, and sensitive paths
