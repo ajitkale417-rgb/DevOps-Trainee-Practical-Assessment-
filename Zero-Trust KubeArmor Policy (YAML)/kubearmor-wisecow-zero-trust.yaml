@@ -1,0 +1,40 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: wisecow-zero-trust
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: wisecow
+
+  process:
+    matchPaths:
+    - path: /bin/sh
+    - path: /bin/bash
+    - path: /usr/bin/apt
+    - path: /usr/bin/apt-get
+    - path: /usr/bin/yum
+    action: Block
+
+  file:
+    matchPaths:
+    - path: /etc/passwd
+      readOnly: true
+    - path: /etc/shadow
+    - path: /root
+    - path: /var/run/secrets
+    action: Block
+
+  network:
+    matchProtocols:
+    - protocol: tcp
+      fromPort: 1
+      toPort: 65535
+    action: Allow
+
+  severity: 5
+  message: "Zero-trust policy violation detected"
+  tags:
+  - zero-trust
+  - wisecow
