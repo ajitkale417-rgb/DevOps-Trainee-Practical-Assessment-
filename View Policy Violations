@@ -1,0 +1,3 @@
+kubectl logs -n kubearmor -l kubearmor-app=kubearmor
+Blocked process /bin/bash
+Policy: wisecow-zero-trust
